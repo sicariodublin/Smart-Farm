@@ -1,0 +1,78 @@
+/*
+CA Part-01
+
+Student Name: Fabio A. Steyer
+Student ID: 22132848
+Programme: Higher Diploma in Science in Computing Information (Software Development)
+Year of Study: 2024
+Module Title: Distributed System
+Lecturer:Sudarshan Deshmukh
+Project/Issay Title: Smart Agriculture/farming 
+Submission Deadline: Monday, 24 April 2024, 11:59 PM
+*/
+
+
+
+syntax = "proto3";
+
+package farming;
+
+service FarmService {
+  // Unary RPC for a simple calculation of fertilizer amount
+  rpc Calculate(FertilizerRequest) returns (FertilizerResponse);
+
+  // Server streaming RPC for sending sensor readings of temperature
+  rpc TemperatureStream(SensorRequest) returns (stream TemperatureResponse);
+
+  // Client streaming RPC for computing average soil moisture average
+  rpc ComputeAverage(stream SoilMoistureRequest) returns (AverageResponse);
+
+  // Bidirectional streaming RPC for finding the optimal setting for water request
+  rpc FindOptimum(stream WateringRequest) returns (stream WateringResponse);
+}
+
+// Request message for calculating the required amount of fertilizer.
+message FertilizerRequest {
+  double acres = 1;
+}
+
+// Response message with the total nitrogen needed for the given area.
+message FertilizerResponse {
+  double total_nitrogen_needed_kg = 1;
+}
+
+// Request message for fetching temperature data.
+  message SensorRequest {
+  string sensor_id = 1;
+}
+
+// Response message containing temperature data.
+message TemperatureResponse {
+  string sensor_id = 1;
+  double temperature = 2;
+  string timestamp = 3;
+}
+
+// Request message for calculating average soil moisture.
+message SoilMoistureRequest {
+  double wet_soil_weight = 1;
+  double dry_soil_weight = 2;
+}
+
+// Response message with the calculated average soil moisture percentage.
+message AverageResponse {
+  double soil_moisture_percentage = 1;
+}
+
+// Request message for determining optimal watering levels.
+message WateringRequest {
+  double moisture_reading = 1; // Moisture reading used to calculate watering needs.
+}
+
+// Response message with recommended watering levels.
+message WateringResponse {
+  double input_moisture = 1; // Echo of the input moisture reading.
+  double recommended_level = 2; // Calculated recommended watering level.
+}
+
+
