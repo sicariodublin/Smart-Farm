@@ -9,6 +9,8 @@ Module Title: Distributed System
 Lecturer:Sudarshan Deshmukh
 Project/Issay Title: Smart Agriculture/farming 
 Submission Deadline: Monday, 24 April 2024, 11:59 PM
+
+To start first run the server.js file and then run the client.js file
 */
 
 

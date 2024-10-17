@@ -167,7 +167,7 @@ server.bindAsync('0.0.0.0:50051', grpc.ServerCredentials.createInsecure(), (err,
     return; // Stop further execution if there is a binding error.
   }
   // Start the server if the port binding is successful.
-  server.start();
+  //server.start();
   // Log that the server is running and show the port it's bound to for verification.
   console.log(`Server running at ${port}`);
 });
