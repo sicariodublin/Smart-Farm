@@ -1,19 +1,3 @@
-/*
-CA Part-01
-
-Student Name: Fabio A. Steyer
-Student ID: 22132848
-Programme: Higher Diploma in Science in Computing Information (Software Development)
-Year of Study: 2024
-Module Title: Distributed System
-Lecturer:Sudarshan Deshmukh
-Project/Issay Title: Smart Agriculture/farming 
-Submission Deadline: Monday, 24 April 2024, 11:59 PM
-
-To start first run the server.js file and then run the client.js file
-*/
-
-
 // Import required modules
 const grpc = require('@grpc/grpc-js');
 const protoLoader = require('@grpc/proto-loader');
